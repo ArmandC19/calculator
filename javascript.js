@@ -92,14 +92,8 @@ function checkNumOperators(array){
 }
 
 function evaluate () {
-  console.log(currentDisplay);
+  //change the string equation into an array of numbers and string operators
   let eq = changeStringsToNumber(currentDisplay.split(' '));
-  //let eq = currentDisplay.split(' ');
-  console.log(eq);
-  // let divisions = findAllIndexsOf(eq, '÷');
-  // let mulits = findAllIndexsOf(eq, '×');
-  // let adds = findAllIndexsOf(eq, '+');
-  // let subs = findAllIndexsOf(eq, '-');
 
   //0 is divison, 1 is mulitplication, 2 is addition, and 3 is subtraction
   let bedmas = 0;
@@ -110,6 +104,10 @@ function evaluate () {
   let index = -1;
   numOps = checkNumOperators(eq);
 
+  //Goes through the array and finds operators in order of bedmas
+  //It caculates the operation and then splices the array to remove the three elements 
+  ////that make up the equation with the answer
+  //eq will be an array the final answer as the element when the loop finishes
   for (let i = 0; i < numOps; i++) {
     switch(bedmas){
       case 0:
