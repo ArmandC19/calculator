@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  grid-template-rows: 150px;
+  height: 500px;
+  width: 300px;
+  background: grey;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+}
+
+.display {
+  grid-column: span 4;
+  display: grid;
+  justify-content: right;
+  align-items: end;
+  background: grey;
+  font-size: 1.5rem;
+}
+
+button {
+  font-size: 1.5rem;
+}
